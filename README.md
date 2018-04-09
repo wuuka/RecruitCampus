@@ -4,6 +4,7 @@ Major companies online programming training.2018/4/8
 # 001
 //[腾讯编程题] 构造回文
 //http://blog.csdn.net/sinat_35512245/article/details/53675660
+
 //给定一个字符串s，你可以从中删除一些字符，使得剩下的串是一个回文串。如何删除才能使得回文串最长呢？
 //输出需要删除的字符个数。
 
@@ -12,8 +13,8 @@ Major companies online programming training.2018/4/8
 
 
 # 012
-#链接：https://www.nowcoder.com/questionTerminal/46e837a4ea9144f5ad2021658cb54c4d
-来源：牛客网
+#链接：https://www.nowcoder.com/questionTerminal/46e837a4ea9144f5ad2021658cb54c4d来源：牛客网
+
 为了找到自己满意的工作，牛牛收集了每种工作的难度和报酬。牛牛选工作的标准是在难度不超过自身能力值的情况下，牛牛选择报酬最高的工作。在牛牛选定了自己的工作后，牛牛的小伙伴们来找牛牛帮忙选工作，牛牛依然使用自己的标准来帮助小伙伴们。牛牛的小伙伴太多了，于是他只好把这个任务交给了你。 
 
 学到：
