@@ -3,6 +3,7 @@ Major companies online programming training.2018/4/8
 
 # 001
 //[腾讯编程题] 构造回文
+//http://blog.csdn.net/sinat_35512245/article/details/53675660
 //给定一个字符串s，你可以从中删除一些字符，使得剩下的串是一个回文串。如何删除才能使得回文串最长呢？
 //输出需要删除的字符个数。
 
