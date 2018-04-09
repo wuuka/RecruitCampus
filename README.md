@@ -1,5 +1,7 @@
-# RecruitCampus
-Major companies online programming training.2018/4/8
+# RecruitCampus 2018/4/8
+Major companies online programming training.
+练习在线编程题
+c++/g++/linux
 
 # 001
 //[腾讯编程题] 构造回文
@@ -10,6 +12,17 @@ Major companies online programming training.2018/4/8
 
 学到：
 在memset函数在c++中头文件用<cstring>,以及字符串翻转函数reverse()，对于两两比较的函数可以使用一个差矩阵进行调整。
+
+
+#002
+//[腾讯编程题] 算法基础-字符移位
+//小Q最近遇到了一个难题：把一个字符串的大写字母放到字符串的后面，各个字符的相对位置不变，且不能申请额外的空间。你能帮帮小Q吗？
+//输入描述:输入数据有多组，每组包含一个字符串s，且保证:1<=s.length<=1000.
+
+//http://blog.csdn.net/xubinlxb/article/details/52432291
+
+学到：
+掌握数据结构才能在编写算法中灵活应用，减少工作量。
 
 
 # 012
