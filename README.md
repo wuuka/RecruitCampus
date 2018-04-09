@@ -1,6 +1,15 @@
 # RecruitCampus
 Major companies online programming training.2018/4/8
 
+# 001
+//[腾讯编程题] 构造回文
+//给定一个字符串s，你可以从中删除一些字符，使得剩下的串是一个回文串。如何删除才能使得回文串最长呢？
+//输出需要删除的字符个数。
+
+学到：
+在memset函数在c++中头文件用<cstring>,以及字符串翻转函数reverse()，对于两两比较的函数可以使用一个差矩阵进行调整。
+
+
 # 012
 #链接：https://www.nowcoder.com/questionTerminal/46e837a4ea9144f5ad2021658cb54c4d
 来源：牛客网
