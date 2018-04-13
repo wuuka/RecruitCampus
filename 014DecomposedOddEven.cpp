@@ -1,3 +1,4 @@
+//一个数分解出做小奇数和偶数
 
 #include "stdafx.h"
 #include <iostream>
