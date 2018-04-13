@@ -1,32 +1,33 @@
-// ¶ş²æËÑË÷Ê÷ÓëË«ÏòÁ´±í
-//ÊäÈëÒ»¿Ã¶ş²æËÑË÷Ê÷£¬½«¸Ã¶ş²æËÑË÷Ê÷×ª»»³ÉÒ»¸öÅÅĞòµÄË«ÏòÁ´±í¡£ÒªÇó²»ÄÜ´´½¨ÈÎºÎĞÂµÄ½áµã£¬Ö»ÄÜµ÷ÕûÊ÷ÖĞ½áµãÖ¸ÕëµÄÖ¸Ïò¡£
+// äºŒå‰æœç´¢æ ‘ä¸åŒå‘é“¾è¡¨
+//è¾“å…¥ä¸€æ£µäºŒå‰æœç´¢æ ‘ï¼Œå°†è¯¥äºŒå‰æœç´¢æ ‘è½¬æ¢æˆä¸€ä¸ªæ’åºçš„åŒå‘é“¾è¡¨ã€‚è¦æ±‚ä¸èƒ½åˆ›å»ºä»»ä½•æ–°çš„ç»“ç‚¹ï¼Œåªèƒ½è°ƒæ•´æ ‘ä¸­ç»“ç‚¹æŒ‡é’ˆçš„æŒ‡å‘ã€‚
 
 //http://blog.csdn.net/zengzhen_csdn/article/details/51198530
+
 
 class Solution {
 public:
     TreeNode* Convert(TreeNode* pRootOfTree)
     {
-        if(pRootOfTree==NULL)//×ÜÊÇÒ»×óÒ»ÓÒµÄÖ´ĞĞ
+        if(pRootOfTree==NULL)//æ€»æ˜¯ä¸€å·¦ä¸€å³çš„æ‰§è¡Œ
             return NULL;
         if(pRootOfTree->left==NULL&&pRootOfTree->right==NULL)
-            return pRootOfTree;//Èç¹ûÊÇÒ¶×Ó½áµãÔò¾ÍµØ·µ»Ø£¬Îª¿ÕÉ¶Ò²²»¸É¾Í»ØÀ´ÁË
-        TreeNode* left = Convert(pRootOfTree->left);//ÕÒµ½×ó×ÓÊ÷×î×ó¶Ë½Úµã
+            return pRootOfTree;//å¦‚æœæ˜¯å¶å­ç»“ç‚¹åˆ™å°±åœ°è¿”å›ï¼Œä¸ºç©ºå•¥ä¹Ÿä¸å¹²å°±å›æ¥äº†
+        TreeNode* left = Convert(pRootOfTree->left);//æ‰¾åˆ°å·¦å­æ ‘æœ€å·¦ç«¯èŠ‚ç‚¹
         TreeNode* curr = left;
-        while(curr!=NULL&&curr->right!=NULL)//ÕÒµ½×ó×ÓÊ÷×îÓÒ±ß½Úµã
-            curr=curr->right;//²Ù×÷Íê³ÉºóÍùºóÃæÒÆ¶¯ÁËÒ»ÏÂ
-        //×ÓÎÊÌâ·µ»Ø×óÓÒ×ÓÊ÷µÄ×î×ó±ßµÄÎ»ÖÃ£¬µ«ÊÇÈç¹ûÊÇ×ó±ß×ÓÊ÷µÄ»°£¬ÎÒÒªµÃµ½×óÓÒ±ß½áµã
-        if(curr!=NULL)//Á¬½Ó¸ù½ÚµãºÍ×ó×ÓÊ÷
+        while(curr!=NULL&&curr->right!=NULL)//æ‰¾åˆ°å·¦å­æ ‘æœ€å³è¾¹èŠ‚ç‚¹
+            curr=curr->right;//æ“ä½œå®Œæˆåå¾€åé¢ç§»åŠ¨äº†ä¸€ä¸‹
+        //å­é—®é¢˜è¿”å›å·¦å³å­æ ‘çš„æœ€å·¦è¾¹çš„ä½ç½®ï¼Œä½†æ˜¯å¦‚æœæ˜¯å·¦è¾¹å­æ ‘çš„è¯ï¼Œæˆ‘è¦å¾—åˆ°å·¦å³è¾¹ç»“ç‚¹
+        if(curr!=NULL)//è¿æ¥æ ¹èŠ‚ç‚¹å’Œå·¦å­æ ‘
         {
             curr->right=pRootOfTree;
             pRootOfTree->left = curr;
-        }//Íê³É×îÓÒ±ßÒ»¸öÓëÍ·Ö¸ÕëÏàÁ¬½Ó
-        TreeNode* right = Convert(pRootOfTree->right);//ÕÒµ½ÓÒ×ÓÊ÷×î×ó¶Ë½Úµã
-        if(right!=NULL)//Á¬½Ó¸ù½ÚµãºÍÓÒ×ÓÊ÷
+        }//å®Œæˆæœ€å³è¾¹ä¸€ä¸ªä¸å¤´æŒ‡é’ˆç›¸è¿æ¥
+        TreeNode* right = Convert(pRootOfTree->right);//æ‰¾åˆ°å³å­æ ‘æœ€å·¦ç«¯èŠ‚ç‚¹
+        if(right!=NULL)//è¿æ¥æ ¹èŠ‚ç‚¹å’Œå³å­æ ‘
         {
             pRootOfTree->right = right;
             right->left = pRootOfTree;
         }
-        return left!=NULL?left:pRootOfTree;//ÕâÀï²ÅÊÇµİ¹é·µ»ØµÄµØ·½ £¬·µ»Ø×î×ó±ßµÄÎ»ÖÃ
+        return left!=NULL?left:pRootOfTree;//è¿™é‡Œæ‰æ˜¯é€’å½’è¿”å›çš„åœ°æ–¹ ï¼Œè¿”å›æœ€å·¦è¾¹çš„ä½ç½®
     }
 };
