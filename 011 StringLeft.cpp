@@ -1,4 +1,5 @@
-//字符串循环
+//字符串循环左移
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
