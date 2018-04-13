@@ -1,4 +1,6 @@
+//æŒ‡é’ˆå’Œå¼•ç”¨
 //https://blog.csdn.net/qq_27678917/article/details/70224813
+
 #include"stdafx.h"
 #include<iostream>
 #include<stdlib.h>
@@ -46,10 +48,10 @@ int main(void)
 
 	test_pro(p);
 	if (p != NULL)
-		cout << "Ö¸Õëp²»ÎªNULL" << endl << endl;
+		cout << "æŒ‡é’ˆpä¸ä¸ºNULL" << endl << endl;
 	cout << p << " " << *p << endl << endl;
 
-	//Ö¸Õë´óÐ¡sizeofÓëÒýÓÃ´óÐ¡µÄÎÊÌâ
+	//æŒ‡é’ˆå¤§å°sizeofä¸Žå¼•ç”¨å¤§å°çš„é—®é¢˜
 	char* ss = "0123456789";
 	cout << sizeof(ss) << endl << sizeof(*ss) << endl;
 	char ss_1[] = "01233456789";
@@ -58,7 +60,7 @@ int main(void)
 	char ss_3[100] = "01233456789";
 	cout << sizeof(ss_3) << endl << strlen(ss_3) << endl;
 	int ss_4[100] = { 0,1,2,3,4,5,6,7,8,9};
-	cout << sizeof(ss_4) << endl;  // << endl << strlen(ss_4)´íÎóµÄ²Ù×÷
+	cout << sizeof(ss_4) << endl;  // << endl << strlen(ss_4)é”™è¯¯çš„æ“ä½œ
 
 	system("pause");
 }
