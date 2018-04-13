@@ -1,6 +1,7 @@
-//ÍøÒ×±ÊÊÔÌâ--»ìºÏÑÕÉ«£¨Òì»ò£©
+//ç½‘æ˜“ç¬”è¯•é¢˜--æ··åˆé¢œè‰²ï¼ˆå¼‚æˆ–ï¼‰
 
-//Äã¾ÍÊÇÒ»¸ö»­¼Ò£¡ÄãÏÖÔÚÏë»æÖÆÒ»·ù»­£¬µ«ÊÇÄãÏÖÔÚÃ»ÓÐ×ã¹»ÑÕÉ«µÄÑÕÁÏ¡£ÎªÁËÈÃÎÊÌâ¼òµ¥£¬ÎÒÃÇÓÃÕýÕûÊý±íÊ¾²»Í¬ÑÕÉ«µÄÑÕÁÏ¡£ÄãÖªµÀÕâ·ù»­ÐèÒªµÄnÖÖÑÕÉ«µÄÑÕÁÏ£¬ÄãÏÖÔÚ¿ÉÒÔÈ¥ÉÌµê¹ºÂòÒ»Ð©ÑÕÁÏ£¬µ«ÊÇÉÌµê²»ÄÜ±£Ö¤ÄÜ¹©Ó¦ËùÓÐÑÕÉ«µÄÑÕÁÏ£¬ËùÒÔÄãÐèÒª×Ô¼º»ìºÏÒ»Ð©ÑÕÁÏ¡£»ìºÏÁ½ÖÖ²»Ò»ÑùµÄÑÕÉ«AºÍÑÕÉ«BÑÕÁÏ¿ÉÒÔ²úÉú(A XOR B)ÕâÖÖÑÕÉ«µÄÑÕÁÏ(ÐÂ²úÉúµÄÑÕÁÏÒ²¿ÉÒÔÓÃ×÷¼ÌÐø»ìºÏ²úÉúÐÂµÄÑÕÉ«,XOR±íÊ¾Òì»ò²Ù×÷)¡£±¾×ÅÇÚ¼ó½ÚÔ¼µÄ¾«Éñ£¬ÄãÏë¹ºÂò¸üÉÙµÄÑÕÁÏ¾ÍÂú×ãÒªÇó£¬ËùÒÔ¼æÖ°³ÌÐòÔ±µÄÄãÐèÒª±à³ÌÀ´¼ÆËã³ö×îÉÙÐèÒª¹ºÂò¼¸ÖÖÑÕÉ«µÄÑÕÁÏ£¿
+
+//ä½ å°±æ˜¯ä¸€ä¸ªç”»å®¶ï¼ä½ çŽ°åœ¨æƒ³ç»˜åˆ¶ä¸€å¹…ç”»ï¼Œä½†æ˜¯ä½ çŽ°åœ¨æ²¡æœ‰è¶³å¤Ÿé¢œè‰²çš„é¢œæ–™ã€‚ä¸ºäº†è®©é—®é¢˜ç®€å•ï¼Œæˆ‘ä»¬ç”¨æ­£æ•´æ•°è¡¨ç¤ºä¸åŒé¢œè‰²çš„é¢œæ–™ã€‚ä½ çŸ¥é“è¿™å¹…ç”»éœ€è¦çš„nç§é¢œè‰²çš„é¢œæ–™ï¼Œä½ çŽ°åœ¨å¯ä»¥åŽ»å•†åº—è´­ä¹°ä¸€äº›é¢œæ–™ï¼Œä½†æ˜¯å•†åº—ä¸èƒ½ä¿è¯èƒ½ä¾›åº”æ‰€æœ‰é¢œè‰²çš„é¢œæ–™ï¼Œæ‰€ä»¥ä½ éœ€è¦è‡ªå·±æ··åˆä¸€äº›é¢œæ–™ã€‚æ··åˆä¸¤ç§ä¸ä¸€æ ·çš„é¢œè‰²Aå’Œé¢œè‰²Bé¢œæ–™å¯ä»¥äº§ç”Ÿ(A XOR B)è¿™ç§é¢œè‰²çš„é¢œæ–™(æ–°äº§ç”Ÿçš„é¢œæ–™ä¹Ÿå¯ä»¥ç”¨ä½œç»§ç»­æ··åˆäº§ç”Ÿæ–°çš„é¢œè‰²,XORè¡¨ç¤ºå¼‚æˆ–æ“ä½œ)ã€‚æœ¬ç€å‹¤ä¿­èŠ‚çº¦çš„ç²¾ç¥žï¼Œä½ æƒ³è´­ä¹°æ›´å°‘çš„é¢œæ–™å°±æ»¡è¶³è¦æ±‚ï¼Œæ‰€ä»¥å…¼èŒç¨‹åºå‘˜çš„ä½ éœ€è¦ç¼–ç¨‹æ¥è®¡ç®—å‡ºæœ€å°‘éœ€è¦è´­ä¹°å‡ ç§é¢œè‰²çš„é¢œæ–™ï¼Ÿ
 
 //http://blog.csdn.net/huzhigenlaohu/article/details/52264154
 
@@ -12,11 +13,11 @@
 
 using namespace std;
 
-// ÇóÒ»¸öÊýµÄ¶þ½øÖÆµÄ×î¸ßÎ»ÊÇÄÄÎ»  
+// æ±‚ä¸€ä¸ªæ•°çš„äºŒè¿›åˆ¶çš„æœ€é«˜ä½æ˜¯å“ªä½  
 int getHighBit(int num) {
 	int highbit = 0;
 	while (num) {
-		// ½«¸ÃÊýµÄ¶þ½øÖÆÓÒÒÆÒ»Î»  
+		// å°†è¯¥æ•°çš„äºŒè¿›åˆ¶å³ç§»ä¸€ä½  
 		num >>= 1;
 		highbit++;
 	}
@@ -37,45 +38,45 @@ int main() {
 			colors.push_back(temp);
 		}
 
-		// ½« colors ½øÐÐ´ÓÐ¡µ½´óµÄÅÅÐò  
+		// å°† colors è¿›è¡Œä»Žå°åˆ°å¤§çš„æŽ’åº  
 		sort(colors.begin(), colors.end());
 		int bigger, smaller;
-		//bigger ºÍ smaller Ê¼ÖÕÖ¸ÏòµÄÊÇ×îºóÒ»Î»ºÍµ¹ÊýµÚ¶þÎ»Êý  
+		//bigger å’Œ smaller å§‹ç»ˆæŒ‡å‘çš„æ˜¯æœ€åŽä¸€ä½å’Œå€’æ•°ç¬¬äºŒä½æ•°  
 		bigger = n - 1;
 		smaller = bigger - 1;
 
 		while (colors.size() > 2) {
-			// Èç¹ûÁ½ÕßµÄ×î¸ßÎ»ÏàÍ¬£¬ËµÃ÷×î¸ßÎ»¿ÉÒÔÏûµô£¬  
-			// ½«Á½Õß xor £¬»òÕßËµ½«¾ØÕóÁ½ÐÐÏà¼õÏûµô×î¸ßÎ»  
+			// å¦‚æžœä¸¤è€…çš„æœ€é«˜ä½ç›¸åŒï¼Œè¯´æ˜Žæœ€é«˜ä½å¯ä»¥æ¶ˆæŽ‰ï¼Œ  
+			// å°†ä¸¤è€… xor ï¼Œæˆ–è€…è¯´å°†çŸ©é˜µä¸¤è¡Œç›¸å‡æ¶ˆæŽ‰æœ€é«˜ä½  
 			if (getHighBit(colors[bigger]) == getHighBit(colors[smaller])) {
 				int tem = colors[bigger] ^ colors[smaller];
-				//find º¯ÊýÍ·ÎÄ¼þÊÇ <algorithm>  
-				// ·ºÐÍËã·¨µÄ find £¬ÔÚ·Ç string ÀàÐÍµÄÈÝÆ÷Àï£¬¿ÉÒÔÖ±½ÓÕÒ³öËù¶ÔÓ¦µÄÔªËØ  
-				// ´Ó vector µÄÍ·¿ªÊ¼Ò»Ö±µ½Î²£¬ÕÒµ½µÚÒ»¸öÖµÎª temp µÄÔªËØ£¬·µ»ØµÄÊÇÒ»¸öÖ¸Ïò¸ÃÔªËØµÄµü´úÆ÷ std::vector<int>::iterator ÀàÐÍ  
+				//find å‡½æ•°å¤´æ–‡ä»¶æ˜¯ <algorithm>  
+				// æ³›åž‹ç®—æ³•çš„ find ï¼Œåœ¨éž string ç±»åž‹çš„å®¹å™¨é‡Œï¼Œå¯ä»¥ç›´æŽ¥æ‰¾å‡ºæ‰€å¯¹åº”çš„å…ƒç´   
+				// ä»Ž vector çš„å¤´å¼€å§‹ä¸€ç›´åˆ°å°¾ï¼Œæ‰¾åˆ°ç¬¬ä¸€ä¸ªå€¼ä¸º temp çš„å…ƒç´ ï¼Œè¿”å›žçš„æ˜¯ä¸€ä¸ªæŒ‡å‘è¯¥å…ƒç´ çš„è¿­ä»£å™¨ std::vector<int>::iterator ç±»åž‹  
 
-				// ÒòÎªÏÖÔÚ xor µÄÊÇÁ½¸ö×î´óµÄÊý£¬¶øÇÒ×î¸ßÎ»ÒÑ±»Ïûµô£¬ËùÒÔ xor µÃµ½µÄ½á¹ûÒ»¶¨±ÈÕâÁ½¸öÊýÐ¡  
+				// å› ä¸ºçŽ°åœ¨ xor çš„æ˜¯ä¸¤ä¸ªæœ€å¤§çš„æ•°ï¼Œè€Œä¸”æœ€é«˜ä½å·²è¢«æ¶ˆæŽ‰ï¼Œæ‰€ä»¥ xor å¾—åˆ°çš„ç»“æžœä¸€å®šæ¯”è¿™ä¸¤ä¸ªæ•°å°  
 
-				// Èç¹û temp Õâ¸ö ±È×î´óÁ½¸öÊýÐ¡µÄ ÊýÃ»ÓÐ±»ÕÒµ½£¬Ôò½« temp ¼Óµ½ colors Êý×éÖÐ£¬½øÐÐÔÙ´Î xor  
-				// ÕÒ²»µ½µÄ»°£¬·µ»Ø colors.end Ó¦¸ÃÊÇ¹Ì¶¨ÓÃ·¨  
+				// å¦‚æžœ temp è¿™ä¸ª æ¯”æœ€å¤§ä¸¤ä¸ªæ•°å°çš„ æ•°æ²¡æœ‰è¢«æ‰¾åˆ°ï¼Œåˆ™å°† temp åŠ åˆ° colors æ•°ç»„ä¸­ï¼Œè¿›è¡Œå†æ¬¡ xor  
+				// æ‰¾ä¸åˆ°çš„è¯ï¼Œè¿”å›ž colors.end åº”è¯¥æ˜¯å›ºå®šç”¨æ³•  
 				vector<int>::iterator qq = find(colors.begin(), colors.end(), tem);
 				if (qq == colors.end()) {
 					colors.push_back(tem);
 					sort(colors.begin(), colors.end());
-					bigger++; // ÒòÎª colors ÖÐ¶àÁËÒ»¸öÊý£¬ËùÒÔÐèÒªÎ»Êý£« 1  
+					bigger++; // å› ä¸º colors ä¸­å¤šäº†ä¸€ä¸ªæ•°ï¼Œæ‰€ä»¥éœ€è¦ä½æ•°ï¼‹ 1  
 					smaller++;
 				}
 			}
 			else {
 				result++;
 			}
-			// Èç¹ûÁ½Õß×î¸ßÎ»²»Í¬£¬ËµÃ÷ÒÑ¾­ËùÓÐÊýµÄ×î¸ßÎ»ÒÑ¾­Ö»ÓÐ×î´óµÄÄÇ¸öÊýÊÇ 1 ÁË£¬ÕâÑùËüÒÑ¾­²»¿ÉÄÜ±»ÏûµôÁË£¬½á¹û£« 1  
+			// å¦‚æžœä¸¤è€…æœ€é«˜ä½ä¸åŒï¼Œè¯´æ˜Žå·²ç»æ‰€æœ‰æ•°çš„æœ€é«˜ä½å·²ç»åªæœ‰æœ€å¤§çš„é‚£ä¸ªæ•°æ˜¯ 1 äº†ï¼Œè¿™æ ·å®ƒå·²ç»ä¸å¯èƒ½è¢«æ¶ˆæŽ‰äº†ï¼Œç»“æžœï¼‹ 1  
 
-			// Èç¹ûÁ½¸ö×î´óÊýµÄ×î¸ßÎ»¿ÉÒÔÏûµô£¬ÄÇÃ´Ïû³ýÖ®ºó£¬×î´óÊýÒÑ±»Ïûµô£¬Ã»ÓÐÓÃÁË  
-			// Èç¹ûÁ½¸ö×î´óÊýµÄ×î¸ßÎ»²»¿ÉÒÔÏûµô£¬ÄÇÃ´½á¹û£« 1 £¬×î´óÊýÒ²Ã»ÓÐÓÃÁË¡£  
-			// µ¯³ö×î´óÊý  
+			// å¦‚æžœä¸¤ä¸ªæœ€å¤§æ•°çš„æœ€é«˜ä½å¯ä»¥æ¶ˆæŽ‰ï¼Œé‚£ä¹ˆæ¶ˆé™¤ä¹‹åŽï¼Œæœ€å¤§æ•°å·²è¢«æ¶ˆæŽ‰ï¼Œæ²¡æœ‰ç”¨äº†  
+			// å¦‚æžœä¸¤ä¸ªæœ€å¤§æ•°çš„æœ€é«˜ä½ä¸å¯ä»¥æ¶ˆæŽ‰ï¼Œé‚£ä¹ˆç»“æžœï¼‹ 1 ï¼Œæœ€å¤§æ•°ä¹Ÿæ²¡æœ‰ç”¨äº†ã€‚  
+			// å¼¹å‡ºæœ€å¤§æ•°  
 			colors.pop_back();
 
-			// ÒòÎªµ¯³öÁËÒ»¸öÊý£¬ËùÒÔ bigger ºÍ smaller ¶¼ÒªÏàÓ¦£­ 1  
+			// å› ä¸ºå¼¹å‡ºäº†ä¸€ä¸ªæ•°ï¼Œæ‰€ä»¥ bigger å’Œ smaller éƒ½è¦ç›¸åº”ï¼ 1  
 			bigger = smaller;
 			smaller--;
 		}
