@@ -1,4 +1,4 @@
-//µİ¹éº¯ÊıµÄ°¸Àı
+//é€’å½’å‡½æ•°çš„æ¡ˆä¾‹
 //https://blog.csdn.net/sinat_38052999/article/details/73303111
 
 #include <iostream>
@@ -15,16 +15,17 @@ typedef struct Node {
 	struct Node *right;
 } *Tree;
 
-//*******************Àà±ğÒ»£ºÎÊÌâµÄ¶¨ÒåÊÇ°´µİ¹é¶¨ÒåµÄ*******************
-///*******************************½×³ËÊı********************************
-int Factorial_Recur(int n) {  //Ê¹ÓÃµİ¹é
-	if (n == 1)   // µİ¹éÖÕÖ¹Ìõ¼ş 
-		return 1;    // ¼òµ¥Çé¾°
+//*******************ç±»åˆ«ä¸€ï¼šé—®é¢˜çš„å®šä¹‰æ˜¯æŒ‰é€’å½’å®šä¹‰çš„*******************
+///*******************************é˜¶ä¹˜æ•°********************************
+//jie cehng shu
+int Factorial_Recur(int n) {  //ä½¿ç”¨é€’å½’
+	if (n == 1)   // é€’å½’ç»ˆæ­¢æ¡ä»¶ 
+		return 1;    // ç®€å•æƒ…æ™¯
 
-	return n * Factorial_Recur(n - 1);  // ÏàÍ¬ÖØ¸´Âß¼­£¬ËõĞ¡ÎÊÌâµÄ¹æÄ£
+	return n * Factorial_Recur(n - 1);  // ç›¸åŒé‡å¤é€»è¾‘ï¼Œç¼©å°é—®é¢˜çš„è§„æ¨¡
 }
 
-int Factorial_loop(int n) {  //Ê¹ÓÃÑ­»·
+int Factorial_loop(int n) {  //ä½¿ç”¨å¾ªç¯
 	int result = n;
 	while (n > 1) {
 		n = n - 1;
@@ -33,17 +34,18 @@ int Factorial_loop(int n) {  //Ê¹ÓÃÑ­»·
 	return result;
 }
 
-///*****************************Åá²¨ÄÇÆõÊıÁĞ*****************************
-int Fibonacci_Recur(int n) {  //Ê¹ÓÃµİ¹é
+///*****************************è£´æ³¢é‚£å¥‘æ•°åˆ—*****************************
+//fei bo na qie
+int Fibonacci_Recur(int n) {  //ä½¿ç”¨é€’å½’
 	if (n == 1 || n == 2)
 		return 1;
 	return Fibonacci_Recur(n - 1) + Fibonacci_Recur(n - 2);
 }
 
-/*@param first ÊıÁĞµÄµÚÒ»Ïî
-  @param second ÊıÁĞµÄµÚ¶şÏî
-  @param n Ä¿±êÏî*/
-int Fibonacci_OptiRecur(int a, int b, int c) {  //Ê¹ÓÃµİ¹éÓÅ»¯
+/*@param first æ•°åˆ—çš„ç¬¬ä¸€é¡¹
+  @param second æ•°åˆ—çš„ç¬¬äºŒé¡¹
+  @param n ç›®æ ‡é¡¹*/
+int Fibonacci_OptiRecur(int a, int b, int c) {  //ä½¿ç”¨é€’å½’ä¼˜åŒ–
 	if(c > 0) {
 		if (c == 1) {
 			return a;
@@ -52,14 +54,14 @@ int Fibonacci_OptiRecur(int a, int b, int c) {  //Ê¹ÓÃµİ¹éÓÅ»¯
 			return b;
 		}
 		else if (c == 3) {  //f(1, 1, 5) = f(1, 2, 4) = f(2, 3, 3); 
-			return a + b;  // µ±c=3Ê±£¬2+3 = 5
+			return a + b;  // å½“c=3æ—¶ï¼Œ2+3 = 5
 		}
 		return Fibonacci_OptiRecur(b, a + b, c - 1);
 	}
 	return -1;
 }
 
-int Fibonacci_Loop(int n) {  //Ê¹ÓÃÑ­»·
+int Fibonacci_Loop(int n) {  //ä½¿ç”¨å¾ªç¯
 	if (n > 0) {
 		int* arr = new int[n];
 		arr[0] = arr[1] = 1;
@@ -70,10 +72,11 @@ int Fibonacci_Loop(int n) {  //Ê¹ÓÃÑ­»·
 	return -1;
 }
 
-///*************************Ñî»ÔÈı½Ç************************************
-/*@x  Ö¸¶¨ĞĞ
-  @y  Ö¸¶¨ÁĞ*/
-int PascalTriangle(int x, int y) {  //µİ¹é
+///*************************æ¨è¾‰ä¸‰è§’************************************
+//yang hui san jiao
+/*@x  æŒ‡å®šè¡Œ
+  @y  æŒ‡å®šåˆ—*/
+int PascalTriangle(int x, int y) {  //é€’å½’
 	if (y <= x && y > 0) {
 		if (y == 1 || y == x)
 			return 1;
@@ -81,8 +84,9 @@ int PascalTriangle(int x, int y) {  //µİ¹é
 	}
 }
 
-///***********************»ØÎÄ×Ö·û´®**********************************
-bool Palindrome_Recur(string s) {  //µİ¹é
+///***********************å›æ–‡å­—ç¬¦ä¸²**********************************
+//hui wen zi fu chuan
+bool Palindrome_Recur(string s) {  //é€’å½’
 	int start = 0;
 	int end = s.length() - 1;
 	if (end > start) {
@@ -98,7 +102,7 @@ bool Palindrome_Recur(string s) {  //µİ¹é
 	return true;
 }
 
-bool Palindrome_Loop(string s) {  //Ñ­»·
+bool Palindrome_Loop(string s) {  //å¾ªç¯
 	int start = 0;
 	int end = s.length() - 1;
 	while(end > start) {
@@ -112,26 +116,27 @@ bool Palindrome_Loop(string s) {  //Ñ­»·
 	return true;
 }
 
-///******************************×Ö·û´®È«ÅÅÁĞ*****************************
+///******************************å­—ç¬¦ä¸²å…¨æ’åˆ—*****************************
+//zi fu chuan quan pai lie
 /*
-@param s     ×Ö·ûÊı×é
-@param from  ÆğÊ¼ÏÂ±ê
-@param to    ÖÕÖ¹ÏÂ±ê*/
+@param s     å­—ç¬¦æ•°ç»„
+@param from  èµ·å§‹ä¸‹æ ‡
+@param to    ç»ˆæ­¢ä¸‹æ ‡*/
 void Permutation(char* sourceStr, char* changeStr)
 {
 	if (*changeStr == '\0')
 		cout << sourceStr << endl;
 	else {
-		//±ÈÈçÔ´×Ö·û´®µ±Ç°ÊÇsourceStr="abc",½»»»×Ö·û´®Ò²ÎªchangeStr="abc",
-		//ĞèÒª×¢ÒâµÄÊÇ£¬º¯Êıvoid Permutation(str,str)´«µÄÊÇÖ¸ÏòÍ¬Ò»¸ö×Ö·û´®µÄÖ¸Õë
+		//æ¯”å¦‚æºå­—ç¬¦ä¸²å½“å‰æ˜¯sourceStr="abc",äº¤æ¢å­—ç¬¦ä¸²ä¹Ÿä¸ºchangeStr="abc",
+		//éœ€è¦æ³¨æ„çš„æ˜¯ï¼Œå‡½æ•°void Permutation(str,str)ä¼ çš„æ˜¯æŒ‡å‘åŒä¸€ä¸ªå­—ç¬¦ä¸²çš„æŒ‡é’ˆ
 		for (char* pCh = changeStr; *pCh != '\0'; pCh++) {
-			swap_(changeStr, pCh);//½»»»µÚÒ»¸öºÍºóÃæÒ»¸ö  
-			Permutation(sourceStr, changeStr + 1);//¹Ì¶¨Ç°ÃæµÄ£¬ºóÃæÔÙÅÅÁĞ  
-			swap_(changeStr, pCh);//ÔÙ»»»ØÔ­À´µÄ  
+			swap_(changeStr, pCh);//äº¤æ¢ç¬¬ä¸€ä¸ªå’Œåé¢ä¸€ä¸ª  
+			Permutation(sourceStr, changeStr + 1);//å›ºå®šå‰é¢çš„ï¼Œåé¢å†æ’åˆ—  
+			swap_(changeStr, pCh);//å†æ¢å›åŸæ¥çš„  
 		}
 	}
-	//Ò»´ÎÍêÕûµÄ´òÓ¡ÊÇÕâÑùµÄ£¬Ê×ÏÈsourceStr¡¢changeStr¶¼Ö¸Ïò"abc"£¬½Ó×ÅswapµÚÒ»¸ö£¬½á¹û»¹ÊÇ"abc"£¬
-	//Õâ¸öÊ±ºò¾Í»áÊä³ö'abc'¡£½Ó×Å»áÍË»ØµÄ¹Ì¶¨'a','b'ºÍ'c'½øĞĞ½»»»£¬Õâ¸öÊ±ºò//sourceStr="acb"£¬¾­¹ıºóÃæÈ«ÅÅÁĞºó£¬ÓÖ»á»»»ØÀ´£¬ÕâÑù"acb"Ò²¾Í´òÓ¡³öÀ´ 
+	//ä¸€æ¬¡å®Œæ•´çš„æ‰“å°æ˜¯è¿™æ ·çš„ï¼Œé¦–å…ˆsourceStrã€changeStréƒ½æŒ‡å‘"abc"ï¼Œæ¥ç€swapç¬¬ä¸€ä¸ªï¼Œç»“æœè¿˜æ˜¯"abc"ï¼Œ
+	//è¿™ä¸ªæ—¶å€™å°±ä¼šè¾“å‡º'abc'ã€‚æ¥ç€ä¼šé€€å›çš„å›ºå®š'a','b'å’Œ'c'è¿›è¡Œäº¤æ¢ï¼Œè¿™ä¸ªæ—¶å€™//sourceStr="acb"ï¼Œç»è¿‡åé¢å…¨æ’åˆ—åï¼Œåˆä¼šæ¢å›æ¥ï¼Œè¿™æ ·"acb"ä¹Ÿå°±æ‰“å°å‡ºæ¥ 
 }
 
 void swap_(char *a, char *b) {
@@ -140,28 +145,29 @@ void swap_(char *a, char *b) {
 	*b = temp;
 }
 
-///***********************************¶ş·Ö²éÕÒ********8********************
-/*@param array Ä¿±êÊı×é
-* @param low ×ó±ß½ç
-* @param high ÓÒ±ß½ç
-* @param target Ä¿±êÖµ
-* @return Ä¿±êÖµËùÔÚÎ»ÖÃ*/
-int binarySearch_Recurise(int* array, int low, int high, int target) {  //µİ¹é
+///***********************************äºŒåˆ†æŸ¥æ‰¾********8********************
+//er fen shu cha zhao 
+/*@param array ç›®æ ‡æ•°ç»„
+* @param low å·¦è¾¹ç•Œ
+* @param high å³è¾¹ç•Œ
+* @param target ç›®æ ‡å€¼
+* @return ç›®æ ‡å€¼æ‰€åœ¨ä½ç½®*/
+int binarySearch_Recurise(int* array, int low, int high, int target) {  //é€’å½’
 	if (low > high)
 		return -1;
 	int mid = (low + high) / 2;
 	if (array[mid] == target)
-		return (mid + 1);  // ·µ»ØÄ¿±êÖµµÄÎ»ÖÃ£¬´Ó1¿ªÊ¼
+		return (mid + 1);  // è¿”å›ç›®æ ‡å€¼çš„ä½ç½®ï¼Œä»1å¼€å§‹
 	else if (array[mid] > target)
-		// ÓÉÓÚarray[mid]²»ÊÇÄ¿±êÖµ£¬Òò´ËÔÙ´Îµİ¹éËÑË÷Ê±£¬¿ÉÒÔ½«ÆäÅÅ³ı
+		// ç”±äºarray[mid]ä¸æ˜¯ç›®æ ‡å€¼ï¼Œå› æ­¤å†æ¬¡é€’å½’æœç´¢æ—¶ï¼Œå¯ä»¥å°†å…¶æ’é™¤
 		binarySearch_Recurise(array, low, mid - 1, target);
 	else
-		// ÓÉÓÚarray[mid]²»ÊÇÄ¿±êÖµ£¬Òò´ËÔÙ´Îµİ¹éËÑË÷Ê±£¬¿ÉÒÔ½«ÆäÅÅ³ı
+		// ç”±äºarray[mid]ä¸æ˜¯ç›®æ ‡å€¼ï¼Œå› æ­¤å†æ¬¡é€’å½’æœç´¢æ—¶ï¼Œå¯ä»¥å°†å…¶æ’é™¤
 		binarySearch_Recurise(array, mid + 1, high, target);
-	//±íÊ¾Ã»ÓĞËÑË÷µ½
+	//è¡¨ç¤ºæ²¡æœ‰æœç´¢åˆ°
 }
 
-int binarySearch_loop(int *array, int high, int target) {  //Ñ­»·
+int binarySearch_loop(int *array, int high, int target) {  //å¾ªç¯
 	int mid, low = 1;
 	while (low <= high) {
 		mid = (low + high) / 2;
@@ -176,30 +182,32 @@ int binarySearch_loop(int *array, int high, int target) {  //Ñ­»·
 }
 
 
-//*******************Àà±ğ¶ş£ºÎÊÌâ½â·¨°´µİ¹éËã·¨ÊµÏÖ*************************
-///*******************************ººÅµËşÎÊÌâ********************************
-/*@param level£ºÅÌ×ÓµÄ¸öÊı
-* @param from ÅÌ×ÓµÄ³õÊ¼µØÖ·
-* @param inter ×ªÒÆÅÌ×ÓÊ±ÓÃÓÚÖĞ×ª
-* @param to ÅÌ×ÓµÄÄ¿µÄµØÖ·*/
+//*******************ç±»åˆ«äºŒï¼šé—®é¢˜è§£æ³•æŒ‰é€’å½’ç®—æ³•å®ç°*************************
+///*******************************æ±‰è¯ºå¡”é—®é¢˜********************************
+//han nuo ta
+/*@param levelï¼šç›˜å­çš„ä¸ªæ•°
+* @param from ç›˜å­çš„åˆå§‹åœ°å€
+* @param inter è½¬ç§»ç›˜å­æ—¶ç”¨äºä¸­è½¬
+* @param to ç›˜å­çš„ç›®çš„åœ°å€*/
 void hanoiTower(int level, char from, char inter, char to) {
-	if (level == 1) // µİ¹éÖÕÖ¹Ìõ¼ş
-		cout << "´Ó" << from << "ÒÆ¶¯ÅÌ×Ó" << level << "ºÅµ½" << to << endl;
+	if (level == 1) // é€’å½’ç»ˆæ­¢æ¡ä»¶
+		cout << "ä»" << from << "ç§»åŠ¨ç›˜å­" << level << "å·åˆ°" << to << endl;
 	else {
-		// µİ¹éµ÷ÓÃ£º½«level-1¸öÅÌ×Ó´ÓfromÒÆµ½inter(²»ÊÇÒ»´ÎĞÔÒÆ¶¯£¬Ã¿´ÎÖ»ÄÜÒÆ¶¯Ò»¸öÅÌ×Ó,ÆäÖĞtoÓÃÓÚÖÜ×ª)
-		hanoiTower(level - 1, from, to, inter); // µİ¹éµ÷ÓÃ£¬ËõĞ¡ÎÊÌâµÄ¹æÄ£
-											  // ½«µÚlevel¸öÅÌ×Ó´ÓA×ùÒÆµ½C×ù
-		cout << "´Ó" << from << "ÒÆ¶¯ÅÌ×Ó" << level << "ºÅµ½" << to << endl;
-		// µİ¹éµ÷ÓÃ£º½«level-1¸öÅÌ×Ó´ÓinterÒÆµ½to,from ÓÃÓÚÖÜ×ª
-		hanoiTower(level - 1, inter, from, to); // µİ¹éµ÷ÓÃ£¬ËõĞ¡ÎÊÌâµÄ¹æÄ£
+		// é€’å½’è°ƒç”¨ï¼šå°†level-1ä¸ªç›˜å­ä»fromç§»åˆ°inter(ä¸æ˜¯ä¸€æ¬¡æ€§ç§»åŠ¨ï¼Œæ¯æ¬¡åªèƒ½ç§»åŠ¨ä¸€ä¸ªç›˜å­,å…¶ä¸­toç”¨äºå‘¨è½¬)
+		hanoiTower(level - 1, from, to, inter); // é€’å½’è°ƒç”¨ï¼Œç¼©å°é—®é¢˜çš„è§„æ¨¡
+											  // å°†ç¬¬levelä¸ªç›˜å­ä»Aåº§ç§»åˆ°Cåº§
+		cout << "ä»" << from << "ç§»åŠ¨ç›˜å­" << level << "å·åˆ°" << to << endl;
+		// é€’å½’è°ƒç”¨ï¼šå°†level-1ä¸ªç›˜å­ä»interç§»åˆ°to,from ç”¨äºå‘¨è½¬
+		hanoiTower(level - 1, inter, from, to); // é€’å½’è°ƒç”¨ï¼Œç¼©å°é—®é¢˜çš„è§„æ¨¡
 	}
 }
 
-//*******************Àà±ğÈı£ºÊı¾İµÄ½á¹¹ÊÇ°´µİ¹é¶¨ÒåµÄ***********************
-///*******************************¶ş²æÊ÷Éî¶È********************************
-//¶ş²æÊ÷¹¹ÔìÆ÷,°´ÏÈĞò±éÀúË³Ğò¹¹Ôì¶ş²æÊ÷
-//ÎŞ×ó×ÓÊ÷»òÓÒ×ÓÊ÷ÓÃ'#'±íÊ¾
-int index = 0;  //È«¾ÖË÷Òı±äÁ¿
+//*******************ç±»åˆ«ä¸‰ï¼šæ•°æ®çš„ç»“æ„æ˜¯æŒ‰é€’å½’å®šä¹‰çš„***********************
+///*******************************äºŒå‰æ ‘æ·±åº¦********************************
+//er cha shu shen du 
+//äºŒå‰æ ‘æ„é€ å™¨,æŒ‰å…ˆåºéå†é¡ºåºæ„é€ äºŒå‰æ ‘
+//æ— å·¦å­æ ‘æˆ–å³å­æ ‘ç”¨'#'è¡¨ç¤º
+int index = 0;  //å…¨å±€ç´¢å¼•å˜é‡
 void treeNodeConstructor(Tree &root, Element data[]) {
 	Element e = data[index++];
 	if (e == '#') {
@@ -208,69 +216,69 @@ void treeNodeConstructor(Tree &root, Element data[]) {
 	else {
 		root = (Node *)malloc(sizeof(Node));
 		root->data = e;
-		treeNodeConstructor(root->left, data);  //µİ¹é¹¹½¨×ó×ÓÊ÷
-		treeNodeConstructor(root->right, data);  //µİ¹é¹¹½¨ÓÒ×ÓÊ÷
+		treeNodeConstructor(root->left, data);  //é€’å½’æ„å»ºå·¦å­æ ‘
+		treeNodeConstructor(root->right, data);  //é€’å½’æ„å»ºå³å­æ ‘
 	}
 }
 
 int getTreeDepth(Tree t) {
-	// Ê÷Îª¿Õ
-	if (t == NULL) // µİ¹éÖÕÖ¹Ìõ¼ş
+	// æ ‘ä¸ºç©º
+	if (t == NULL) // é€’å½’ç»ˆæ­¢æ¡ä»¶
 		return 0;
 
-	int left = getTreeDepth(t->left); // µİ¹éÇó×ó×ÓÊ÷Éî¶È£¬ËõĞ¡ÎÊÌâµÄ¹æÄ£
-	int right = getTreeDepth(t->left); // µİ¹éÇóÓÒ×ÓÊ÷Éî¶È£¬ËõĞ¡ÎÊÌâµÄ¹æÄ£
+	int left = getTreeDepth(t->left); // é€’å½’æ±‚å·¦å­æ ‘æ·±åº¦ï¼Œç¼©å°é—®é¢˜çš„è§„æ¨¡
+	int right = getTreeDepth(t->left); // é€’å½’æ±‚å³å­æ ‘æ·±åº¦ï¼Œç¼©å°é—®é¢˜çš„è§„æ¨¡
 
 	return left > right ? left + 1 : right + 1;
 
 }    
 
 
-//Ö÷º¯Êı
+//ä¸»å‡½æ•°
 int main() {
-	int Fac_recur = Factorial_Recur(10);  //½×Êı
+	int Fac_recur = Factorial_Recur(10);  //é˜¶æ•°
 	int Fac_loop = Factorial_loop(10);
 	
-	int Fib_recur = Fibonacci_Recur(7);  //Åá²¨ÄÇÆõÊıÁĞ
+	int Fib_recur = Fibonacci_Recur(7);  //è£´æ³¢é‚£å¥‘æ•°åˆ—
 	int Fib_optirecur = Fibonacci_OptiRecur(1, 1, 7);
 	int Fib_loop = Fibonacci_Loop(7);
 
-	int pascal = PascalTriangle(4, 3);  //Ñî»ÔÈı½Ç
+	int pascal = PascalTriangle(4, 3);  //æ¨è¾‰ä¸‰è§’
 	
-	string tt = "sdtds";  //»ØÎÄ×Ö·û´®
+	string tt = "sdtds";  //å›æ–‡å­—ç¬¦ä¸²
 	bool palindrome_recur = Palindrome_Recur(tt);
 	bool palindrome_loop = Palindrome_Loop(tt);
 
-	char str[] = "sdgs";  //×Ö·û´®È«ÅÅÁĞ
+	char str[] = "sdgs";  //å­—ç¬¦ä¸²å…¨æ’åˆ—
 	Permutation(str, str);
 
-	int bianry[8] = { 2, 5, 7, 14, 19, 45, 87, 100 };  //¶ş·Ö²éÕÒ
+	int bianry[8] = { 2, 5, 7, 14, 19, 45, 87, 100 };  //äºŒåˆ†æŸ¥æ‰¾
 	int binar_1 = binarySearch_Recurise(bianry, 0, 8, 45);
 	int binar_2 = binarySearch_loop(bianry, 8, 45);
 
-	int nDisks = 4;  //ººÅµËş
+	int nDisks = 4;  //æ±‰è¯ºå¡”
 	hanoiTower(nDisks, 'A', 'B', 'C');
 
-	//¶ş²æÊ÷ https://www.cnblogs.com/rednodel/p/7737686.html
+	//äºŒå‰æ ‘ https://www.cnblogs.com/rednodel/p/7737686.html
 	Element data[15] = { 'A', 'B', 'D', '#', '#', 'E', '#', '#', 'C', 'F','#', '#', 'G', '#', '#' };
 	Tree tree;
 	treeNodeConstructor(tree, data);
 	int Hight = getTreeDepth(tree);
 
-	//Ê¹ÓÃboolalphaÊä³öÎªboolÀàĞÍ;Ê¹ÓÃnoboolalphaÊä³öÎªÊı×ÖÀàĞÍ
-	cout << "½×³ËÖµ:" << endl << Fac_recur << endl << Fac_loop << endl << endl
-		<< "Åá²¨ÄÇÆõ£º" << endl << Fib_recur << endl << Fib_optirecur << endl << Fib_loop << endl << endl
-		<< "Ñî»ÔÈı½Ç£º" << endl << pascal << endl << endl
-		<< "»ØÎÄ×Ö·û´®ÅĞ¶Ï£º" << endl << boolalpha << palindrome_recur << endl << palindrome_loop << endl << endl
-		<< "¶ş·Ö²éÕÒ;" << endl << binar_1 << endl << binar_2 << endl
-		<< "¶ş²æÊ÷µÄÉî¶È£º" << endl << Hight << endl;
+	//ä½¿ç”¨boolalphaè¾“å‡ºä¸ºboolç±»å‹;ä½¿ç”¨noboolalphaè¾“å‡ºä¸ºæ•°å­—ç±»å‹
+	cout << "é˜¶ä¹˜å€¼:" << endl << Fac_recur << endl << Fac_loop << endl << endl
+		<< "è£´æ³¢é‚£å¥‘ï¼š" << endl << Fib_recur << endl << Fib_optirecur << endl << Fib_loop << endl << endl
+		<< "æ¨è¾‰ä¸‰è§’ï¼š" << endl << pascal << endl << endl
+		<< "å›æ–‡å­—ç¬¦ä¸²åˆ¤æ–­ï¼š" << endl << boolalpha << palindrome_recur << endl << palindrome_loop << endl << endl
+		<< "äºŒåˆ†æŸ¥æ‰¾;" << endl << binar_1 << endl << binar_2 << endl
+		<< "äºŒå‰æ ‘çš„æ·±åº¦ï¼š" << endl << Hight << endl;
 	
 
-	//×Ö·û´®Óë×Ö·ûÊı×éµÄÇø±ğ
+	//å­—ç¬¦ä¸²ä¸å­—ç¬¦æ•°ç»„çš„åŒºåˆ«
 	string sstri = "sdgjwers";
 	char stri_[] = "sdgjwers";
-	cout <<"ÄÚ´æËùÕ¼¿Õ¼ä£º"<<endl<< sizeof(sstri) << endl << sizeof(stri_) << endl
-		<< "×Ö·û³¤¶È£º"<<endl<<sstri.length() << endl << strlen(stri_) << endl;
+	cout <<"å†…å­˜æ‰€å ç©ºé—´ï¼š"<<endl<< sizeof(sstri) << endl << sizeof(stri_) << endl
+		<< "å­—ç¬¦é•¿åº¦ï¼š"<<endl<<sstri.length() << endl << strlen(stri_) << endl;
 	system("pause");
 
 	return 0;
