@@ -85,3 +85,6 @@ c++/g++/linux
 
 # 013
 【模板用法】     https://blog.csdn.net/qq_35637562/article/details/55194097
+
+# 014
+将一个数分解出最小奇数和最小偶数项
