@@ -1,5 +1,6 @@
-//Á½µãÖ®¼äÂ·¾¶¸öÊý
-//µÝ¹éº¯ÊýµÄ°¸Àý  https://blog.csdn.net/sinat_38052999/article/details/73303111
+//ä¸¤ç‚¹ä¹‹é—´è·¯å¾„ä¸ªæ•°
+
+//é€’å½’å‡½æ•°çš„æ¡ˆä¾‹  https://blog.csdn.net/sinat_38052999/article/details/73303111
 #include <iostream>  
 #include <cmath>  
 
@@ -24,10 +25,10 @@ int fun(int row, int col, int x, int y) {
 int main()
 {
 	int startX, startY, endX, endY;
-	cout << "ÇëÊäÈëÆðµãºÍÖÕµã×ø±ê" << endl;
+	cout << "è¯·è¾“å…¥èµ·ç‚¹å’Œç»ˆç‚¹åæ ‡" << endl;
 	cin >> startX >> startY >> endX >> endY;
-	cout << "Æðµã×ø±êÎª£¨" << startX << "," << startY << ")" << endl;
-	cout << "ÖÕµã×ø±êÎª£¨" << endX << "," << endY << ")" << endl;
+	cout << "èµ·ç‚¹åæ ‡ä¸ºï¼ˆ" << startX << "," << startY << ")" << endl;
+	cout << "ç»ˆç‚¹åæ ‡ä¸ºï¼ˆ" << endX << "," << endY << ")" << endl;
 	int lenX = abs(startX - endX);
 	int lenY = abs(startY - endY);
 	cout << fun(0, 0, lenX, lenY);
