@@ -1,1 +1,69 @@
+//剑指offer面试编程案例
 
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+
+using namespace std;
+
+//01二维数组的查找
+class Solution01 {
+public:
+	bool Find(int target, vector<vector<int> > array) {  //用两次vector来定义数组（动态数组定义）
+		
+		//vector定义数组的行列长度查找；
+		int row = array.size();
+		int col = array[0].size();
+
+		//判断数组含有变量
+		if (row > 0 && col > 0) {
+			
+			int i = 0, j = col - 1;
+			while (i < row && j >= 0) {  //方案一：选用数组右上角的点数做判断
+				if (array[i][j] == target)
+					return true;
+				else if (array[i][j] > target)
+					j--;
+				else
+					i++;
+			}
+
+			/*
+			int i_ = row - 1, j_ = 0;
+			while (i_ >= 0 && j_ < col) {  //方案二：选用数组左下角的点数做判断
+				if (array[i_][j_] == target)
+					return true;
+				else if (array[i_][j_] > target)
+					i_--;
+				else
+					j_++;
+			}*/
+		}
+		return false;
+	}
+
+	void test() {
+		vector <vector<int>> array{ { 1, 2, 3, 4, 5 },
+		{ 6, 7, 8, 9, 10 },
+		{ 11, 12, 13, 14, 15 },
+		{ 16, 17, 18, 19, 20 } };
+		vector<int> target{ 1, 2, 3, 10, 0, -1, 32, 34, 20, 16, 15, 6 };
+
+		for (int i = 0; i != target.size(); i++) {
+			cout << "target " << target[i] << boolalpha <<  //bool类型数据显示
+				"    std:" << (1 <= target[i] && target[i] <= 20) <<  //判断在（1， 20）范围之内
+				"  res:"<< Find( target[i], array) << endl;
+		}
+	}
+
+};
+
+int main()
+{
+	Solution01 temp;  //调用实用类
+	temp.test();
+
+	system("pause");
+	return 0;
+}
