@@ -59,6 +59,52 @@ public:
 
 };
 
+//02字符串空格的替换
+class Solution02 {
+public:
+	void replaceSpace(char *str, int length) {  //输入字符串 str；数组内存空间长度length;
+
+		if (str == NULL || length <= 0)  //判断字符串内存
+			return;
+		
+		int numblank = 0, numlength = 0, i = 0;
+		while(str[i] != '\0') {  //将原有字符串扩展后长度计算
+			if (str[i] == ' ')
+				++numblank;
+			
+			++numlength;
+			++i;
+		}
+
+		int newlength = numlength + 2 * numblank;
+		if (newlength > length)
+			return;
+
+		while (newlength != numlength) {  //将字符串从末尾开始添加“%20”，向前移动
+			if (str[numlength] == ' ') {
+				str[newlength--] = '0';
+				str[newlength--] = '2';
+				str[newlength--] = '%';
+			}
+			else { 
+				str[newlength--] = str[numlength];
+			}
+			--numlength;
+		}
+	}
+
+	void test() {
+		vector<string> vec{ "We are Happy", "hello",
+			"", "  hlee", "hll  ", "  srfe  ", "  se  sd " };
+		for (int i = 0; i != vec.size(); i++) {
+			char buf[256] = { 0 };
+			strcpy_s(buf, vec[i].c_str());
+			replaceSpace(buf, 256);
+			cout << vec[i] << "   " << buf << endl;
+		}
+	}
+};
+
 int main()
 {
 	Solution01 temp;  //调用实用类
