@@ -105,6 +105,49 @@ public:
 	}
 };
 
+//03从尾到头来打印链表
+class Solution03 {
+	struct ListNode {  //定义指针结构
+		int val;
+		struct ListNode *next;
+		ListNode(int x) :
+			val(x), next(NULL) {
+		}
+	};
+
+public:
+	void printListFromTailToHead_recuit(ListNode* head) {  //采用递归的思想进行输出链表
+		if (head != NULL) {
+			if (head->next != NULL)
+				printListFromTailToHead_recuit(head->next);
+			cout << head->val << endl;
+		}
+	}
+
+	void printListFromTailToHead_itler(ListNode* head) {  //使用栈先入后出的方式
+		stack <ListNode*>node;
+		ListNode* pnode = head;
+		while (pnode != NULL) {
+			node.push(pnode);
+			pnode = pnode->next;
+		}
+		while (!node.empty()) {
+			cout << node.top()->val << endl;
+			node.pop();
+		}
+	}
+
+	void test() {
+		ListNode myHead(0), a(1), b(2), c(3), d(4), e(5), f(6);
+		myHead.next = &a, a.next = &b, b.next = &c, c.next = &d,
+			d.next = &e, e.next = &f;
+
+		printListFromTailToHead_itler(&myHead);
+		printListFromTailToHead_recuit(&myHead);
+	}
+};
+
+
 int main()
 {
 	Solution01 temp;  //调用实用类
