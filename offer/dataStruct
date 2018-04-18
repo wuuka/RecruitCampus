@@ -115,13 +115,15 @@ class Solution03 {
 		}
 	};
 
-public:
-	void printListFromTailToHead_recuit(ListNode* head) {  //采用递归的思想进行输出链表
+public:	
+        vector<int> dev;
+	vector<int> printListFromTailToHead_recuit(ListNode* head) {  //采用递归的思想进行输出链表
 		if (head != NULL) {
 			if (head->next != NULL)
-				printListFromTailToHead_recuit(head->next);
-			cout << head->val << endl;
+				dev = printListFromTailToHead_recuit(head->next);
+			dev.push_back(head->val);
 		}
+		return dev;
 	}
 
 	void printListFromTailToHead_itler(ListNode* head) {  //使用栈先入后出的方式
@@ -138,19 +140,23 @@ public:
 	}
 
 	void test() {
+		vector<int> vector_list;
 		ListNode myHead(0), a(1), b(2), c(3), d(4), e(5), f(6);
 		myHead.next = &a, a.next = &b, b.next = &c, c.next = &d,
 			d.next = &e, e.next = &f;
-
 		printListFromTailToHead_itler(&myHead);
-		printListFromTailToHead_recuit(&myHead);
+
+		vector_list = printListFromTailToHead_recuit(&myHead);
+		for (auto item : vector_list)
+			cout << item << endl;
 	}
 };
 
 
+
 int main()
 {
-	Solution01 temp;  //调用实用类
+	Solution03 temp;  //调用实用类
 	temp.test();
 
 	system("pause");
