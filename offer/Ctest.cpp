@@ -1,5 +1,5 @@
 #include "stdafx.h"
-//½£Ö¸offerÃæÊÔ±à³Ì°¸Àı
+//å‰‘æŒ‡offeré¢è¯•ç¼–ç¨‹æ¡ˆä¾‹
 
 #include "stdafx.h"
 #include <iostream>
@@ -10,20 +10,20 @@
 
 using namespace std;
 
-//01¶şÎ¬Êı×éµÄ²éÕÒ
+//01 äºŒç»´æ•°ç»„çš„æŸ¥æ‰¾
 class Solution01 {
 public:
-	bool Find(int target, vector<vector<int> > array) {  //ÓÃÁ½´ÎvectorÀ´¶¨ÒåÊı×é£¨¶¯Ì¬Êı×é¶¨Òå£©
+	bool Find(int target, vector<vector<int> > array) {  //ç”¨ä¸¤æ¬¡vectoræ¥å®šä¹‰æ•°ç»„ï¼ˆåŠ¨æ€æ•°ç»„å®šä¹‰ï¼‰
 
-														 //vector¶¨ÒåÊı×éµÄĞĞÁĞ³¤¶È²éÕÒ£»
+														 //vectorå®šä¹‰æ•°ç»„çš„è¡Œåˆ—é•¿åº¦æŸ¥æ‰¾ï¼›
 		int row = array.size();
 		int col = array[0].size();
 
-		//ÅĞ¶ÏÊı×éº¬ÓĞ±äÁ¿
+		//åˆ¤æ–­æ•°ç»„å«æœ‰å˜é‡
 		if (row > 0 && col > 0) {
 
 			int i = 0, j = col - 1;
-			while (i < row && j >= 0) {  //·½°¸Ò»£ºÑ¡ÓÃÊı×éÓÒÉÏ½ÇµÄµãÊı×öÅĞ¶Ï
+			while (i < row && j >= 0) {  //æ–¹æ¡ˆä¸€ï¼šé€‰ç”¨æ•°ç»„å³ä¸Šè§’çš„ç‚¹æ•°åšåˆ¤æ–­
 				if (array[i][j] == target)
 					return true;
 				else if (array[i][j] > target)
@@ -34,7 +34,7 @@ public:
 
 			/*
 			int i_ = row - 1, j_ = 0;
-			while (i_ >= 0 && j_ < col) {  //·½°¸¶ş£ºÑ¡ÓÃÊı×é×óÏÂ½ÇµÄµãÊı×öÅĞ¶Ï
+			while (i_ >= 0 && j_ < col) {  //æ–¹æ¡ˆäºŒï¼šé€‰ç”¨æ•°ç»„å·¦ä¸‹è§’çš„ç‚¹æ•°åšåˆ¤æ–­
 			if (array[i_][j_] == target)
 			return true;
 			else if (array[i_][j_] > target)
@@ -54,24 +54,24 @@ public:
 		vector<int> target{ 1, 2, 3, 10, 0, -1, 32, 34, 20, 16, 15, 6 };
 
 		for (int i = 0; i != target.size(); i++) {
-			cout << "target " << target[i] << boolalpha <<  //boolÀàĞÍÊı¾İÏÔÊ¾
-				"    std:" << (1 <= target[i] && target[i] <= 20) <<  //ÅĞ¶ÏÔÚ£¨1£¬ 20£©·¶Î§Ö®ÄÚ
+			cout << "target " << target[i] << boolalpha <<  //boolç±»å‹æ•°æ®æ˜¾ç¤º
+				"    std:" << (1 <= target[i] && target[i] <= 20) <<  //åˆ¤æ–­åœ¨ï¼ˆ1ï¼Œ 20ï¼‰èŒƒå›´ä¹‹å†…
 				"  res:" << Find(target[i], array) << endl;
 		}
 	}
 
 };
 
-//02×Ö·û´®¿Õ¸ñµÄÌæ»»
+//02 å­—ç¬¦ä¸²ç©ºæ ¼çš„æ›¿æ¢
 class Solution02 {
 public:
 	void replaceSpace(char *str, int length) {
 
-		if (str == NULL || length <= 0)  //ÅĞ¶Ï×Ö·û´®ÄÚ´æ
+		if (str == NULL || length <= 0)  //åˆ¤æ–­å­—ç¬¦ä¸²å†…å­˜
 			return;
 
 		int numblank = 0, numlength = 0, i = 0;
-		while (str[i] != '\0') {  //½«Ô­ÓĞ×Ö·û´®À©Õ¹ºó³¤¶È¼ÆËã
+		while (str[i] != '\0') {  //å°†åŸæœ‰å­—ç¬¦ä¸²æ‰©å±•åé•¿åº¦è®¡ç®—
 			if (str[i] == ' ')
 				++numblank;
 
@@ -83,7 +83,7 @@ public:
 		if (newlength > length)
 			return;
 
-		while (newlength != numlength) {  //½«×Ö·û´®´ÓÄ©Î²¿ªÊ¼Ìí¼Ó¡°%20¡±£¬ÏòÇ°ÒÆ¶¯
+		while (newlength != numlength) {  //å°†å­—ç¬¦ä¸²ä»æœ«å°¾å¼€å§‹æ·»åŠ â€œ%20â€ï¼Œå‘å‰ç§»åŠ¨
 			if (str[numlength] == ' ') {
 				str[newlength--] = '0';
 				str[newlength--] = '2';
@@ -108,9 +108,9 @@ public:
 	}
 };
 
-//03´ÓÎ²µ½Í·À´´òÓ¡Á´±í
+//03 ä»å°¾åˆ°å¤´æ¥æ‰“å°é“¾è¡¨
 class Solution03 {
-	struct ListNode {  //¶¨ÒåÖ¸Õë½á¹¹
+	struct ListNode {  //å®šä¹‰æŒ‡é’ˆç»“æ„
 		int val;
 		struct ListNode *next;
 		ListNode(int x) :
@@ -120,7 +120,7 @@ class Solution03 {
 
 public:
 	vector<int> dev;
-	vector<int> printListFromTailToHead_recuit(ListNode* head) {  //²ÉÓÃµİ¹éµÄË¼Ïë½øĞĞÊä³öÁ´±í
+	vector<int> printListFromTailToHead_recuit(ListNode* head) {  //é‡‡ç”¨é€’å½’çš„æ€æƒ³è¿›è¡Œè¾“å‡ºé“¾è¡¨
 		if (head != NULL) {
 			if (head->next != NULL)
 				dev = printListFromTailToHead_recuit(head->next);
@@ -129,7 +129,7 @@ public:
 		return dev;
 	}
 
-	void printListFromTailToHead_itler(ListNode* head) {  //Ê¹ÓÃÕ»ÏÈÈëºó³öµÄ·½Ê½
+	void printListFromTailToHead_itler(ListNode* head) {  //ä½¿ç”¨æ ˆå…ˆå…¥åå‡ºçš„æ–¹å¼
 		stack <ListNode*>node;
 		ListNode* pnode = head;
 		while (pnode != NULL) {
@@ -155,9 +155,9 @@ public:
 	}
 };
 
-//04ÖØ½¨¶ş²æÊ÷
+//04 é‡å»ºäºŒå‰æ ‘
 class Solution04 {
-	struct TreeNode {  //Ê÷½á¹¹
+	struct TreeNode {  //æ ‘ç»“æ„
 		int val;
 		TreeNode *left;
 		TreeNode *right;
@@ -167,13 +167,13 @@ class Solution04 {
 
 public:
 	TreeNode* reConstructBinaryTree(vector<int> pre, vector<int> vin) {
-		//ÅĞ¶Ïº¯Êı²ÎÊıÓĞÒâÒå
+		//åˆ¤æ–­å‡½æ•°å‚æ•°æœ‰æ„ä¹‰
 		int length = vin.size();
 		if (pre.size() !=vin.size() || length <= 0) {
 			return NULL;
 		}
 
-		//²éÕÒÇ°Ğò±éÀúÖĞµÄ¸ù½Úµã
+		//æŸ¥æ‰¾å‰åºéå†ä¸­çš„æ ¹èŠ‚ç‚¹
 		int lable_root;
 		for (int i = 0; i<length; i++) {
 			if (vin[i] == pre[0]) {
@@ -182,7 +182,7 @@ public:
 			}
 		}
 
-		//½«Ê÷·Ö³É×ó×ÓÊ÷ºÍÓÒ×ÓÊ÷
+		//å°†æ ‘åˆ†æˆå·¦å­æ ‘å’Œå³å­æ ‘
 		vector<int> pre_left, pre_right, vin_left, vin_right;
 		for (int j = 1; j<length; j++) {
 			if (j <= lable_root) {
@@ -195,14 +195,14 @@ public:
 			}
 		}
 
-		//µİ¹é²éÕÒ×óÓÒ×ÓÊ÷µÄ¸ù
+		//é€’å½’æŸ¥æ‰¾å·¦å³å­æ ‘çš„æ ¹
 		TreeNode* head = new TreeNode(pre[0]);
 		head->left = reConstructBinaryTree(pre_left, vin_left);
 		head->right = reConstructBinaryTree(pre_right, vin_right);
 		return head;
 	}
 
-	// ÏÈĞò±éÀú´òÓ¡  
+	// å…ˆåºéå†æ‰“å°  
 	void preOrderTraverse(TreeNode * T) {
 		if (T) {
 			cout << T->val << " ";
@@ -211,7 +211,7 @@ public:
 		}
 	}
 
-	// ÖĞĞò±éÀú´òÓ¡  
+	// ä¸­åºéå†æ‰“å°  
 	void midOrderTraverse(TreeNode * T) {
 		if (T) {
 			midOrderTraverse(T->left);
@@ -220,7 +220,7 @@ public:
 		}
 	}
 
-	// ºóĞò±éÀú´òÓ¡  
+	// ååºéå†æ‰“å°  
 	void endOrderTraverse(TreeNode * T) {
 		if (T) {
 			endOrderTraverse(T->left);
@@ -237,19 +237,54 @@ public:
 		{},{ 5 },{ 1, 2 },{},{ 1, 2 } };
 		for (int i = 0; i != pre.size(); i++) {
 			TreeNode * res = reConstructBinaryTree(pre[i], in[i]);
-			cout << "Ç°Ğò±éÀú:" << endl;
+			cout << "å‰åºéå†:" << endl;
 			preOrderTraverse(res); 
-			cout << endl << "ÖĞĞò±éÀú:" << endl;
+			cout << endl << "ä¸­åºéå†:" << endl;
 			midOrderTraverse(res);
-			cout << endl << "ºóĞò±éÀú:" << endl;
+			cout << endl << "ååºéå†:" << endl;
 			endOrderTraverse(res);
+		}
+	}
+};
+
+//06 æ—‹è½¬æ•°ç»„çš„æœ€å°æ•°å­—
+class Solution06 {
+public:
+	int minNumberInRotateArray(vector<int> rotateArray) {
+		if (rotateArray.size() <= 0)
+			return 0;
+
+		//äºŒåˆ†æŸ¥æ‰¾æ³•
+		int vectorfirst = 0;
+		int vectorend = rotateArray.size() - 1;
+		int vectorMid = 0;
+		while (rotateArray[vectorfirst] > rotateArray[vectorend]) {  //åˆ¤æ–­å¾ªç¯ä½“æ³¨æ„å¯¹äºä¸€ä¸ªå…ƒç´ æ—¶ï¼Œä¸åº”è¯¥ç”¨ç›¸ç­‰å»åˆ¤æ–­
+			if (vectorend - vectorfirst == 1) {
+				vectorMid = vectorend;
+				break;
+			}
+			vectorMid = (vectorfirst + vectorend) / 2;
+			if (rotateArray[vectorfirst] <= rotateArray[vectorMid])
+				vectorfirst = vectorMid;
+			else if (rotateArray[vectorend] >= rotateArray[vectorMid])
+				vectorend = vectorMid;
+		}
+		return rotateArray[vectorMid];
+	}
+
+	void test() {
+		vector<vector<int>> arr{ { 1, 2, 3, 4, 5 },{ 3, 4, 5, 1, 2 },
+		{},{ 1 },{ 2, 1 },{ 1, 2 },{ 3, 1, 2 },{ 1, 2, 2, 3, 4,4, 5, 5, 5, 6, 6, 6 } ,
+		{ 1, 1, 1,1, 1,1,1 } };
+		for (int i = 0; i != arr.size(); i++) {
+			cout << minNumberInRotateArray(arr[i]) << endl;
 		}
 	}
 };
 
 int main()
 {
-	Solution04 temp;  //µ÷ÓÃÊµÓÃÀà
+	Solution04 temp;  //è°ƒç”¨å®ç”¨ç±»
 	temp.test();
 
 	system("pause");
