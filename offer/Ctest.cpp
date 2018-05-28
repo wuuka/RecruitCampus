@@ -247,6 +247,49 @@ public:
 	}
 };
 
+//05 用两个队列实现栈
+class Solution05 {
+public:
+	void push(int node) {
+		stack1.push(node);
+	}
+
+	int pop() {
+		if (stack2.size() <= 0) {
+			while (stack1.size() > 0){
+				stack2.push(stack1.top());
+				stack1.pop();
+			}
+		}
+
+		if (stack2.size() == 0)
+			cout << "quene invad" << endl;
+
+		int head = stack2.top();
+		stack2.pop();
+		return head;
+	}
+
+	//栈的实现
+	void test() {
+		vector<vector<int>> arr{ { 1, 2, 3, 4, 5, 6 },{ 5, 3, 6 },{ 1, 2 },{ 0 },{},{ 1, -1, 2 } };
+		for (int i = 0; i != arr.size(); i++) {
+			for (int j = 0; j != arr[i].size(); j++) {
+				push(arr[i][j]);
+			}
+
+			for (int j = 0; j != arr[i].size(); j++) {
+				cout << pop() << " ";
+			}
+			cout << endl;
+		}
+	}
+
+private:
+	stack<int> stack1;
+	stack<int> stack2;
+};
+
 //06 旋转数组的最小数字
 class Solution06 {
 public:
