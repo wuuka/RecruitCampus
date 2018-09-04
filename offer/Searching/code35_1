@@ -1,5 +1,6 @@
 #include <iostream>
 #include <assert.h>
+
 using namespace std;
 
 //删除字符串中所有重复的字符，例如google，删除重复字符后为gole
