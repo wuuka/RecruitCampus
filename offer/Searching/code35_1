@@ -1,0 +1,38 @@
+#include <iostream>
+#include <assert.h>
+using namespace std;
+
+//删除字符串中所有重复的字符，例如google，删除重复字符后为gole
+char * deleteRepeatedChars(char *pString) {
+	if (pString == NULL || strlen(pString) == 1) return pString;
+	//设置一个bool型数组来实现哈希表，key为数组下表（对应字符的ascii码），value为数组下标对应的字符是否已经在字符串中出现过
+	const int tableSize = 256;
+	bool hashTable[tableSize];
+	memset(hashTable, 0, sizeof(hashTable));
+
+	char *slow = pString;
+	char *fast = pString;
+	while (*fast != '\0') {
+		if (!hashTable[*fast]) {
+			hashTable[*fast] = 1;
+			*slow = *fast;
+			slow++;
+		}
+
+		fast++;
+	}
+	*slow = '\0';
+
+	return pString;
+}
+
+
+int main() {
+	cout << "*****test2 pString中有重复字符:*****";
+	string str = "aabcdccefgeeh";
+	char *pString = (char*)str.data();
+	pString = deleteRepeatedChars(pString);
+	cout << pString << endl;
+
+	return 0;
+}
