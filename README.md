@@ -1,3 +1,6 @@
+# 1 菜鸟教程 c++  http://www.runoob.com/cplusplus/cpp-polymorphism.html
+# 2 计算感受野 https://fomoro.com/tools/receptive-fields/#3,2,1,VALID;2,2,1,VALID;3,1,1,VALID;2,2,1,VALID;3,1,1,VALID;3,1,1,VALID;3,2,1,VALID;3,2,1,VALID;3,2,1,SAME;3,2,1,SAME;3,2,1,SAME
+
 # RecruitCampus 2018/4/8
 Major companies online programming training.
 练习在线编程题
